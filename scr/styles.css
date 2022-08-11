@@ -1,0 +1,148 @@
+body {
+  background: -webkit-linear-gradient(
+    to bottom right,
+    rgba(95, 208, 240, 0.81),
+    rgba(46, 133, 231, 0.9),
+    rgba(22, 98, 185, 0.9),
+    rgba(95, 208, 240, 0.81)
+  );
+  background: linear-gradient(
+    to bottom right,
+    rgba(95, 208, 240, 0.81),
+    rgba(46, 133, 231, 0.9),
+    rgba(22, 98, 185, 0.9),
+    rgba(95, 208, 240, 0.81)
+  );
+  min-height: 100vh;
+  font-family: "Anek Malayalam", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  color: white;
+}
+
+h1,
+h2,
+h3,
+p {
+  text-align: center;
+}
+
+h1 {
+  font-size: 70px;
+}
+h2 {
+  font-size: 40px;
+}
+h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+img {
+  width: 150px;
+  display: block;
+  margin: 0;
+}
+ul {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+  margin: 20px 25px;
+  font-size: 21px;
+  display: inline-block;
+  padding: 32px;
+  margin-top: 20px;
+  max-width: 200px;
+}
+
+span {
+  font-size: 40px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.current-location-button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  color: white;
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 4px;
+}
+.current-location-button:hover {
+  background: white;
+  color: #3c84d1;
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+}
+
+.currently-city h2 {
+  margin-top: 30px;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+.currently-weather {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.178);
+  max-width: 800px;
+  color: white;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.degree {
+  float: right;
+  margin-top: 10px;
+}
+
+.week_whether img {
+  width: 100px;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 300px;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 60px;
+  padding: 5px 10px;
+}
+
+.search-bar input {
+  background: transparent;
+  flex: 1;
+  border: 0;
+  outline: none;
+  font-size: 16px;
+  color: #fff;
+}
+::placeholder {
+  color: #fff;
+}
+
+.search-bar button img {
+  width: 15px;
+}
+
+.search-bar button {
+  border: 0;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.37);
+}
+
+.humidity-class {
+  margin-top: 40px;
+}
