@@ -146,3 +146,12 @@ a {
 .humidity-class {
   margin-top: 40px;
 }
+.link {
+  color: white;
+  font-size: 15px;
+}
+.github-img {
+  width: 50px;
+  display: block;
+  margin: 0 auto;
+}
