@@ -70,6 +70,13 @@ function showCurrentWeather(response) {
   let weatherDescription = response.data.weather[0].main;
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = weatherDescription;
+
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].main);
 }
 
 function currentData() {
