@@ -66,11 +66,15 @@ function showCurrentWeather(response) {
   let currentWind = response.data.wind.speed;
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = `Wind ${currentWind} km/h`;
-  console.log(response);
+  let sunrise = new Date(response.data.sys.sunrise * 1000);
+  let sunriseElement = document.querySelector("#sunrise");
+  sunriseElement.innerHTML = `Sunrise <br/> ${sunrise.getHours()}:${sunrise.getMinutes()}`;
+  let sunset = new Date(response.data.sys.sunset * 1000);
+  let sunsetElement = document.querySelector("#sunset");
+  sunsetElement.innerHTML = `Sunset <br/> ${sunset.getHours()}:${sunset.getMinutes()}`;
   let weatherDescription = response.data.weather[0].main;
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = weatherDescription;
-
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
