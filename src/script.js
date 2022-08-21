@@ -105,3 +105,35 @@ function showCelsiusScale() {
 }
 let currentCelsiusTemp = document.querySelector("#celsius");
 currentCelsiusTemp.addEventListener("click", showCelsiusScale);
+
+function cityKyiv() {
+  let city = "kyiv";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
+  axios.get(apiUrl).then(showCurrentWeather);
+}
+let kyiv = document.querySelector("#kyiv");
+kyiv.addEventListener("click", cityKyiv);
+
+function cityWarsaw() {
+  let city = "warsaw";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
+  axios.get(apiUrl).then(showCurrentWeather);
+}
+let warsaw = document.querySelector("#warsaw");
+warsaw.addEventListener("click", cityWarsaw);
+
+function cityParis() {
+  let city = "paris";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
+  axios.get(apiUrl).then(showCurrentWeather);
+}
+let paris = document.querySelector("#paris");
+paris.addEventListener("click", cityParis);
+
+function cityLondon() {
+  let city = "london";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
+  axios.get(apiUrl).then(showCurrentWeather);
+}
+let london = document.querySelector("#london");
+london.addEventListener("click", cityLondon);
