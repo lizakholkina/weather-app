@@ -48,10 +48,37 @@ currentCity.addEventListener("submit", search);
 function currentPosition(position) {
   let lat = position.coords.latitude;
   let long = position.coords.longitude;
-  //  let unit = "metric";
-  //  let apiKey = "7917ebc82cf63d690dd0000ac2ff6bd6";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&units=${unit}`;
   axios.get(apiUrl).then(showCurrentWeather);
+}
+
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<ul>`;
+  let days = ["TUE", "WED", "FRI"];
+  // сколько ты будеешь писать дней столько и будет элементов
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+  <li>
+    SUN
+    <br />
+    <p>21 ° <small>11 °</small></p>
+    <img src="img/white_cloud.png" alt="cloud" />
+  </li>
+`;
+  });
+
+  forecastHTML = forecastHTML + `</ul>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "7917ebc82cf63d690dd0000ac2ff6bd6";
+  let apiUrlForecast = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrlForecast).then(displayForecast);
 }
 
 function showCurrentWeather(response) {
@@ -102,6 +129,8 @@ function showCurrentWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].main);
+
+  getForecast(response.data.coord);
 }
 
 function currentData() {
