@@ -53,20 +53,20 @@ function currentPosition(position) {
 }
 
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<ul>`;
-  let days = ["TUE", "WED", "FRI"];
+  // let days = ["TUE", "WED", "FRI"];
   // сколько ты будеешь писать дней столько и будет элементов
-  days.forEach(function (day) {
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `
   <li>
-    SUN
+    ${forecastDay.dt}
     <br />
-    <p>21 ° <small>11 °</small></p>
-    <img src="img/white_cloud.png" alt="cloud" />
+    <p>${forecastDay.temp.max}° <small>${forecastDay.temp.min}°</small></p>
+    <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="cloud" />
   </li>
 `;
   });
