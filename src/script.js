@@ -65,8 +65,12 @@ function displayForecast(response) {
   <li>
     ${forecastDay.dt}
     <br />
-    <p>${forecastDay.temp.max}° <small>${forecastDay.temp.min}°</small></p>
-    <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="cloud" />
+    <p>${Math.round(forecastDay.temp.max)}° <small>${(N = Math.round(
+        forecastDay.temp.min
+      ))}°</small></p>
+    <img src="http://openweathermap.org/img/wn/${
+      forecastDay.weather[0].icon
+    }@2x.png" alt="cloud" />
   </li>
 `;
   });
