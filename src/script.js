@@ -65,21 +65,23 @@ function displayForecast(response) {
   let forecastHTML = `<ul>`;
   // let days = ["TUE", "WED", "FRI"];
   // сколько ты будеешь писать дней столько и будет элементов
-  forecast.forEach(function (forecastDay) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
   <li>
     ${formatDay(forecastDay.dt)}
     <br />
     <p>${Math.round(forecastDay.temp.max)}° <small>${(N = Math.round(
-        forecastDay.temp.min
-      ))}°</small></p>
+          forecastDay.temp.min
+        ))}°</small></p>
     <img src="http://openweathermap.org/img/wn/${
       forecastDay.weather[0].icon
     }@2x.png" alt="cloud" />
   </li>
 `;
+    }
   });
 
   forecastHTML = forecastHTML + `</ul>`;
