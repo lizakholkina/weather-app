@@ -197,3 +197,5 @@ function cityLondon() {
 }
 let london = document.querySelector("#london");
 london.addEventListener("click", cityLondon);
+
+//  http://openweathermap.org/img/wn/10d@2x.png - ссылка для иконок из API
