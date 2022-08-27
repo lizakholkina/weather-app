@@ -52,6 +52,13 @@ function currentPosition(position) {
   axios.get(apiUrl).then(showCurrentWeather);
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  return days[day];
+}
+
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
@@ -63,7 +70,7 @@ function displayForecast(response) {
       forecastHTML +
       `
   <li>
-    ${forecastDay.dt}
+    ${formatDay(forecastDay.dt)}
     <br />
     <p>${Math.round(forecastDay.temp.max)}° <small>${(N = Math.round(
         forecastDay.temp.min
