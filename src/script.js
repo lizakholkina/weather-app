@@ -76,9 +76,9 @@ function displayForecast(response) {
     <p>${Math.round(forecastDay.temp.max)}° <small>${(N = Math.round(
           forecastDay.temp.min
         ))}°</small></p>
-    <img src="http://openweathermap.org/img/wn/${
-      forecastDay.weather[0].icon
-    }@2x.png" alt="cloud" />
+    <img src="img/${forecastDay.weather[0].icon}.png" alt="${
+          forecastDay.weather[0].description
+        }" />
   </li>
 `;
     }
@@ -137,10 +137,7 @@ function showCurrentWeather(response) {
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = weatherDescription;
   let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
+  iconElement.setAttribute("src", `img/${response.data.weather[0].icon}.png`);
   iconElement.setAttribute("alt", response.data.weather[0].main);
 
   getForecast(response.data.coord);
